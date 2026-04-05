@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #171717;
+    --text-primary: #ededed;
+    --text-secondary: #a3a3a3;
+    --text-muted: #525252;
+    --accent: #22d3ee;
+    --border: #262626;
+    --code-bg: #1f1f1f;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #fafafa;
+        --text-primary: #171717;
+        --text-secondary: #525252;
+        --text-muted: #a3a3a3;
+        --accent: #0891b2;
+        --border: #e5e5e5;
+        --code-bg: #f4f4f4;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.intro h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.content {
+    margin-bottom: 2rem;
+}
+
+.content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.project {
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    margin-bottom: 0.75rem !important;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--code-bg);
+    border-radius: 4px;
+    color: var(--text-muted);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.post-preview {
+    margin-bottom: 1.5rem;
+}
+
+.post-preview a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.post-preview a:hover h2 {
+    color: var(--accent);
+}
+
+.post-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.blog-post header {
+    margin-bottom: 2rem;
+}
+
+.blog-post h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-post .post-date {
+    color: var(--text-muted);
+}
+
+.blog-post .content h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-post .content p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.blog-post .content code {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.blog-post .content pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.blog-post .content pre code {
+    background: none;
+    padding: 0;
+}
+
+.blog-post .project-tags {
+    margin-top: 1rem;
+}
+
+.blog-post .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.coming-soon {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+}
