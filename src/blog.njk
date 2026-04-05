@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Blog
+---
+
+<section class="content">
+    <h1>Blog</h1>
+    <p>Thoughts on software engineering, system design, and things I find interesting.</p>
+</section>
+
+<section class="content">
+{% for post in collections.blog | reverse %}
+    <article class="project">
+        <a href="{{ post.url }}" style="text-decoration: none;">
+            <h2>{{ post.data.title }}</h2>
+            <p class="project-description">{{ post.data.excerpt }}</p>
+            <p class="post-date">{{ post.date | readableDate }}</p>
+        </a>
+    </article>
+{% endfor %}
+</section>
