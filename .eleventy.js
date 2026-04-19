@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPassthroughCopy("src/styles.css");
+  eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/me.jpg");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
 
