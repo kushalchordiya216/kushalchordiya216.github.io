@@ -261,6 +261,32 @@ nav {
     margin-top: 1rem;
 }
 
+.blog-post .content blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    background: var(--bg-secondary);
+    border-radius: 0 8px 8px 0;
+}
+
+.blog-post .content blockquote p {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.blog-post .content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.blog-post .content img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .coming-soon {
     color: var(--text-muted);
     font-style: italic;
