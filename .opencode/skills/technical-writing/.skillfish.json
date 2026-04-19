@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "technical-writing",
+  "owner": "richtabor",
+  "repo": "agent-skills",
+  "path": "skills/technical-writing",
+  "branch": "main",
+  "sha": "95111ac7bbe674285666b7163f54934ea90f2b19",
+  "source": "manual"
+}
