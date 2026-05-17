@@ -1,0 +1,105 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 4;
+    hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6b7280;
+    font-style: italic;
+}
+
+.token.punctuation {
+    color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #b392f0;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #9ecbff;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #f97583;
+}
+
+.token.function,
+.token.class-name {
+    color: #d2a8ff;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #ffab70;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+pre[class*="language-"] {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+code[class*="language-"] {
+    background: none;
+    padding: 0;
+}
+
+pre[class*="language-"]::before {
+    content: attr(class);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
