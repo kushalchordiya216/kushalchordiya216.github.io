@@ -29,58 +29,72 @@
     </header>
     <div class="content">
         <p>So, I missed my weekly update.  I know, I know. I’m already hearing the collective sigh of my zero subscribers, but I broke my one rule: <em>ship something, anything, every week</em>.</p>
-<p>It happened  because fell for the classic blunder. No, not a land war in Asia. I said the cursed words: &quot;I can do this in a weekend&quot;
-It was supposed to be simple. A CLI, some SQLite, and a dash of LLM magic. I’d have it done by Sunday brunch. By Tuesday, I’d be the main character of a viral Twitter thread. I was going to turn my digital graveyard of bookmarks into Doompile, the ultimate AI study planner.
+<p>It happened  because fell for the classic blunder. No, not a land war in Asia. I said the cursed words: <span style ="color: #b392f0">&quot;I can do this in a weekend&quot;</span></p>
+<p>It was supposed to be simple. A CLI, some SQLite, and a dash of LLM magic. I’d have it done by Sunday brunch. By Tuesday, I’d be the main character of a viral Twitter thread. I was going to turn my digital graveyard of bookmarks into Doompile, the ultimate AI study planner.
 Instead, after two weeks of fucking around, I have a repo that is 80% boilerplate and a scope currently orbiting Saturn.</p>
-<p>But I learned (tbh, re-learnt) a lot about how to build with AI and crucially how <em>NOT</em> to build with AI. So, in the long tradition espoused by all my idols, I'm shipping a blog post instead.</p>
+<p>But I learned (tbh, re-learnt) a lot about how to build with AI and crucially how <strong>NOT</strong> to build with AI.  So, in the long tradition espoused by all my idols, I'm shipping a blog post instead.</p>
 <h2>Embrace the Fog (But Don't Inhale)</h2>
 <blockquote>
 <p>&quot;You now have soma. We call it Claude Code... a warm, pleasant fog where every problem dissolves. Stuck on a bug? Soma. Need to scaffold a new service? Soma. A gramme is always better than a damn.&quot; - A Brave New World, if Gary Marcus wrote it....probably</p>
 </blockquote>
-<p>Jokes aside, the paradigm has shifted, <strong>it really is a new world</strong>. Doesn't matter how many 9s of reliability GitHub loses or how many times a vibe coded outages us-east-1 faces, this is the new baseline. We have to adapt, so we might as well learn some new rules.</p>
+<p>Jokes aside, the paradigm has shifted, <span style ="color: #b392f0"><strong>it really is a new world</strong></span>. Doesn't matter how many 9s of reliability GitHub loses or how many times a vibe coded outages us-east-1 faces, this is the new baseline. We have to adapt, so we might as well learn some new rules.</p>
 <h3>1. A single thread is a bottleneck</h3>
-<p>You aren't using this tech if you're working sequentially. You have to get comfortable keeping multiple running threads in your head. Frontend, backend, infrastructure, you should be spinning them up simultaneously and switching context often. It feels unnatural, but it's required.</p>
+<p>You aren't using this tech if you're working sequentially. You have to get comfortable keeping multiple running threads in your head. Frontend, backend, infrastructure, you should be spinning them up simultaneously and switching between them often. It feels unnatural, but it's required.</p>
 <h3>2. It's all just vibes, man</h3>
-<p>If you're multi-threading at that speed, you can't track every detail. For veterans, this is terrifying. You have to unlearn the instinct to own every single line of code. It doesn't scale anymore. You have to make peace with the unknown, embrace the foggy nature of coding from here onwards (but not completely, as we'll see in a minute)</p>
-<h3>Meet the new boss, same as the old boss</h3>
-<p>Yeah so, despite what I was literally just saying about it being a whole new world, turns out, the more things change the more they stay the same and in fact, and much of traditional boomer engineering wisdom is more relevant than ever now</p>
-<h4>1. Define your minimum viable intent</h4>
-<p>AI is the ultimate yes-man. Give it a vague prompt, and it will bloat your scope until you're trying to build the universe from scratch.
+<p>If you're multi-threading at that speed, you can't track every detail. For veterans, this is terrifying. <span style ="color: #b392f0">You have to unlearn the instinct to own every single line of code. It doesn't scale anymore</span>. You have to make peace with the unknown, embrace the foggy nature of coding from here onwards (but not completely, as we'll see in a minute)</p>
+<h2>Meet the new boss, same as the old boss</h2>
+<p>Yeah so, despite what I was literally just saying about it being a whole new world, turns out, the more things change the more they stay the same and in fact, and <span style ="color: #b392f0">much of traditional boomer engineering wisdom is more relevant than ever now</span></p>
+<ol>
+<li>
+<p><strong>Define your minimum viable intent</strong></p>
+<p><img src="/assets/images/apple_pie.jpg" alt="Apple Pie">
+AI is the ultimate yes-man. Give it a vague prompt, and it will bloat your scope until you're trying to build the universe from scratch.
 In my study planner experiment, I asked my agent to parse some bookmarks. Instead, it went rogue and built a data ingestion pipeline with OCR, entity disambiguation, and a custom graph search on top of SQLite. I had no idea if it actually worked, and when it inevitably broke, I couldn't fix it.</p>
-<p>If you don't enforce a ruthlessly tight scope, the AI will build you a cathedral when you just needed a shed.
+<p><span style ="color: #b392f0">If you don't enforce a ruthlessly tight scope, the AI will build you a cathedral when you just needed a shed</span>.
 (Side note my personal conspiracy theory is the labs are deliberately training the models to always generate more tokens so they can bill you more, I'm onto you Dario ಠ_ಠ)</p>
-<h4>2. Architecture is the Only Thing You Actually Own</h4>
+</li>
+<li>
+<p><strong>Architecture is the Only Thing You Actually Own</strong></p>
 <p>This is the flip side of vibe-coding. Because you're delegating the micro-implementation to the clankers, the macro-design is all yours. You must have total clarity from 10,000 feet up. Remember, if the AI is the Co-Pilot, <strong>you are the pilot</strong> and you need to have</p>
 <ul>
-<li>Strict boundaries: Clean API surfaces, abstracted business logic layers, strictly defined data ownership, all validated by the developer.</li>
-<li>Structured telemetry: Logs, logs, and more logs. Structured and queryable, you need to be able to audit exactly what your agents are doing when they decide to rewrite your auth logic at 2 AM.</li>
-<li>Data-centric design: Your data model is the core. If you get it wrong, the rest of the application will spend its entire life apologizing for it.</li>
-<li>Resilient by default: Do not try to build a perfect system. You will fail and so will your app. Build one that expects failure, handles them gracefully and heals itself.</li>
+<li><strong>Strict boundaries</strong>: Clean API surfaces, abstracted business logic layers, strictly defined data ownership, all validated by the developer.</li>
+<li><strong>Structured telemetry</strong>: Logs, logs, and more logs. Structured and queryable, you need to be able to audit exactly what your agents are doing when they decide to rewrite your auth logic at 2 AM.</li>
+<li><strong>Data-centric design</strong>: Your data model is the core. If you get it wrong, the rest of the application will spend its entire life apologizing for it.</li>
+<li><strong>Resilient by default</strong>: Do not try to build a perfect system. You will fail and so will your app. Build one that expects failure, handles them gracefully and heals itself.</li>
 </ul>
-<h4>3. Diffusion Models &gt; Auto-regressive Models</h4>
+</li>
+<li>
+<p><strong>Diffusion Models &gt; Auto-regressive Models</strong></p>
 <p>Diffusion models work by iteratively denoising a machine, over and over, gradually bringing it closer and closer to the desired result. Autoregressive models by contrast, generate the entire output, from left to right, in a single pass. A common term people have recently started using, is &quot;one-shotting&quot;</p>
 <p>We love the magic trick of the &quot;one-shot&quot;, giving the AI a massive spec and watching it spit out an entire app left-to-right. It feels amazing, it's like a drug, in fact, it IS a drug. And just like a drug, you come down from the high three hours later (allegedly 🌚 )</p>
 <p>Then you're staring at an impenetrable wall of regex that supposedly parses HTML, and you want to cry. When the inevitable hallucination happens deeply nested in that one-shot code, you won't know where it broke or why.</p>
-<p>Resist the instinct to one-shot things, you are just reinventing waterfall from first principles. Act like a diffusion model, not an auto-regressive one. Build, validate, refactor, iterate. Denoise the code step-by-step.</p>
-<h4>4. An exploding ship, is technically the fastest ...</h4>
+<p>Resist the instinct to one-shot things, you are just reinventing waterfall from first principles. Act like a diffusion model, not an auto-regressive one. <span style ="color: #b392f0">Build, validate, refactor, iterate.</span> Denoise the code step-by-step.</p>
+<p><img src="/assets/images/cato.jpeg" alt="Cato"></p>
+</li>
+<li>
+<p><strong>An exploding ship, is technically the fastest ...</strong></p>
 <p>One of Meta's core values used to be &quot;Move Fast, Break Things&quot;. At some point we decided to drop the &quot;Break Things&quot;, just &quot;Move Fast&quot;, it was cleaner. But it seems like it's making a bit of comeback in recent days .....</p>
 <p>The thing is, this hyper fixation on speed we've had as an industry, had an implicit requirement alongside speed all these years. <strong>Feedback!</strong>
-Speed paired with accurate, rich feedback signals is how SpaceX catches descending rockets with giant metal chopsticks. Speed without feedback is the Mariner 1 launch in 1962. A single missing over bar in a guidance equation caused the rocket to misinterpret its velocity and fishtail so violently it had to be blown up 293 seconds after liftoff.</p>
-<p>Speed is a liability if your feedback loop is slower than your execution. You shouldn't fly faster than your &quot;guidance system&quot; (validating the functionality and performance) can course-correct. This is especially true with AI since all models seem to have a repeated tendency to get tunnel visioned and never course correcting (AGI fr fr). So, have a tight, accurate feedback loop in all your development</p>
-<h4>5. Tests, types and tabs</h4>
+Speed paired with accurate, rich feedback signals is how SpaceX catches descending rockets with giant metal chopsticks. Speed with inaccurate feedback (or worse, no feedback at all!) is the Mariner 1 launch in 1962. A single missing over bar in a guidance equation caused the rocket to misinterpret its velocity and fishtail so violently it had to be blown up 293 seconds after liftoff.</p>
+<p><span style ="color: #b392f0">Speed is a liability if your feedback loop is slower than your execution</span>. You shouldn't fly faster than your &quot;guidance system&quot; (validating the functionality and performance) can course-correct. This is especially true with AI since all models seem to have a repeated tendency to get tunnel visioned and never course correcting (AGI fr fr). So, have a tight, accurate feedback loop in all your development</p>
+</li>
+<li>
+<p><strong>Tests, types and tabs</strong></p>
 <p>The AI doesn't have a soul, so it will be yours being judged for the 3,000-line utils.ts slop. Just because you can't check every single line of code doesn't mean there's no option but to let it rot.</p>
 <p>Use strict types to enforce safety boundaries between agent tasks. Run your linters. Have comprehensive unit tests, even if the AI writes them, you need to know exactly what functionality they're testing.</p>
 <p>Cleanliness is next to godliness, so keep your damn codebase clean.</p>
+</li>
+</ol>
 <h2>Tactical hygiene for the new age</h2>
 <p>You can't just raw-dog a frontier model and expect production-ready code. Here's some practical advice I've learnt at work as well as in my own personal tinkering</p>
 <ol>
-<li>Beware of context poisoning
+<li><strong>Beware of context poisoning.</strong>
 Keep track of exactly what's in your agent's session. Unwanted ideas sneak in and derail the whole train. When brainstorming, stay neutral. Don't lead the witness. Let the model form an opinion first, then argue with it.</li>
-<li>Checkpointing is survival
-Always have a rollback strategy. You need a record of what changed, why it changed, and what's broken. Keep this in a format both you and the clanker can read, markdown files in source control work just fine.</li>
-<li>Stop paying Opus to write tests
+<li><strong>Checkpointing is survival.</strong>
+Always have a rollback strategy. You need a record of what changed, why it changed, and what's left to do, etc. Keep this in a format both you and the clanker can read, markdown files in source control work just fine.</li>
+<li><strong>Stop paying Opus to write tests.</strong>
 Frontier models like Claude Opus or GPT-5.5 are brilliant for complex reasoning. They are also incredibly expensive. Stop using them for boilerplate. Use models slightly behind the frontier (like Kimi or Deepseek) for defined coding tasks. Use free, fast models like Minimax M2.5 for writing docs or unit tests. Match the model to the target.</li>
-<li>Learn the new primitives
+<li><strong>Learn the new primitives.</strong>
 The IDE is changing. You need to understand the new building blocks. This is your new debugger. Learn how to set them up
 <ul>
 <li>AI web search tools</li>
@@ -90,7 +104,7 @@ The IDE is changing. You need to understand the new building blocks. This is you
 <li>Change viewers, lightweight editors, Git hacks to enable multi agent coding, etc.</li>
 </ul>
 </li>
-<li>Pick a stack and move
+<li><strong>Pick a stack and move.</strong>
 Tool choice fatigue is real. It used to be JavaScript frameworks; now it's models, agents, and prompts. Stop agonizing over the &quot;perfect stack.&quot; Pick one and start shipping. Note the friction points, and only then look for a tool to fix them.
 My current terminal-obsessed setup:
 <ul>
