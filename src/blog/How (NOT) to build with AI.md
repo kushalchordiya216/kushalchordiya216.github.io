@@ -66,10 +66,13 @@ Yeah so, despite what I was literally just saying about it being a whole new wor
 4. **An exploding ship, is technically the fastest ...**
 
    One of Meta's core values used to be "Move Fast, Break Things". At some point we decided to drop the "Break Things", just "Move Fast", it was cleaner. But it seems like it's making a bit of comeback in recent days .....
+	   
+	![Move_fast](/assets/images/gotta_go_fast.jpg)
 
    The thing is, this hyper fixation on speed we've had as an industry, had an implicit requirement alongside speed all these years. **Feedback!**
+   
    Speed paired with accurate, rich feedback signals is how SpaceX catches descending rockets with giant metal chopsticks. Speed with inaccurate feedback (or worse, no feedback at all!) is the Mariner 1 launch in 1962. A single missing over bar in a guidance equation caused the rocket to misinterpret its velocity and fishtail so violently it had to be blown up 293 seconds after liftoff.
-
+   
    <span style ="color: #b392f0">Speed is a liability if your feedback loop is slower than your execution</span>. You shouldn't fly faster than your "guidance system" (validating the functionality and performance) can course-correct. This is especially true with AI since all models seem to have a repeated tendency to get tunnel visioned and never course correcting (AGI fr fr). So, have a tight, accurate feedback loop in all your development
 
 5. **Tests, types and tabs**
