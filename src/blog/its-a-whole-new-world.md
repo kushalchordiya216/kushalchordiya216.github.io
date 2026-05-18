@@ -10,9 +10,11 @@ date: 2026-05-17
 ---
 So, I missed my weekly update.  I know, I know. I’m already hearing the collective sigh of my zero subscribers, but I broke my one rule: [*ship something, anything, every week*](/blog/learning-publicly/).
 
-It happened  because fell for the classic blunder. No, not a land war in Asia. I said the cursed words: <span style ="color: #b392f0">"I can do this in a weekend"</span>
+It happened because I fell for the classic blunder. No, not a land war in Asia. I said the cursed words: <span style ="color: #b392f0">"I can do this in a weekend"</span>
 
-It was supposed to be simple. A CLI, some SQLite, and a dash of LLM magic. I’d have it done by Sunday brunch. By Tuesday, I’d be the main character of a viral Twitter thread. I was going to turn my digital graveyard of bookmarks into Doompile, the ultimate AI study planner, with a super productive learning loop of  `ingest->extract->organise->plan->track->build` that would propel me to the peak of productivity.
+It was supposed to be simple. A CLI, some SQLite, and a dash of LLM magic. I’d have it done by Sunday brunch. By Tuesday, I’d be the main character of a viral Twitter thread. I was going to turn my digital graveyard of bookmarks into Doompile, the ultimate AI study planner, with a super learning loop of  
+	`ingest->extract->organise->plan->track->build` 
+that would propel me to the peaks of productivity.
 
 Instead, after two weeks of fucking around, I have a repo that is 80% boilerplate and a scope currently orbiting Saturn.
 
@@ -28,7 +30,7 @@ Jokes aside, the paradigm has shifted, <span style ="color: #b392f0">**it really
 You aren't using this tech if you're working sequentially. You have to get comfortable keeping multiple running threads in your head. Frontend, backend, infrastructure, you should be spinning them up simultaneously and switching between them often. It feels really unintuitive when you start but eventually you just have to get adjusted to ADD (ADHD Driven Development).
 ### 2. It's all just vibes, man
 
-If you're multi-threading at that speed, you can't track every detail. This is especially terrified for veterans who are have spent years building muscle memory around good coding practices. <span style ="color: #b392f0">You have to unlearn the instinct to own every single line of code. It doesn't scale anymore</span>. You have to make peace with the unknown, embrace the foggy nature of coding from here onwards (but not completely, as we'll see in a minute)
+If you're multi-threading at that speed, you can't track every detail. This is especially terrifying for veterans who have spent years building muscle memory around good coding practices. <span style ="color: #b392f0">You have to unlearn the instinct to own every single line of code. It doesn't scale anymore</span>. You have to make peace with the unknown, embrace the foggy nature of coding from here onwards (but not completely, as we'll see in a minute)
 
 ## Meet the new boss, same as the old boss 
 
